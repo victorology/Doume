@@ -30,4 +30,7 @@ $(function() {
 	$(".submit").click(function() {
 		return false;
 	});
+
+	fieldset_height = $("fieldset").outerHeight();
+	$(".space").height(fieldset_height);
 });
