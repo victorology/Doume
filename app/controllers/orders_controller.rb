@@ -7,6 +7,8 @@ class OrdersController < ApplicationController
 		order.name = @data['name']
 		order.address = @data['address']
 		order.tel = @data['tel']
-		order.save
+		if order.save
+			NotificationMailer.order_notification(order).deliver
+		end
 	end
 end

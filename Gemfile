@@ -16,6 +16,7 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation', '~> 4.3.2'
+gem 'mandrill-api'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

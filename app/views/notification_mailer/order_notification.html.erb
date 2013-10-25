@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>We have a new order!</h1>
+    <table>
+      <tr>
+        <td>Date</td><td><%= @order.order_at %></td>
+        <td>Service Type</td><td><%= service_string(@order.service_type) %></td>
+        <td>Name</td><td><%= @order.name %></td>
+        <td>Address</td><td><%= @order.address %></td>
+        <td>Tel</td><td><%= @order.tel %></td>
+      </tr>
+    </table>
+  </body>
+</html>
