@@ -13,6 +13,11 @@ $(function() {
 		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 		next_fs.show();
 		current_fs.hide();
+
+		var order_date = current_fs.find("#order_date").val();
+		next_fs.find("#order_date").html(order_date);
+		var order_service = current_fs.find('input[name=service]:checked').parent().text();
+		next_fs.find("#order_service").html(order_service);
 	});
 
 	$(".previous").click(function() {
@@ -33,4 +38,6 @@ $(function() {
 
 	fieldset_height = $("fieldset").outerHeight();
 	$(".space").height(fieldset_height);
+
+	$('#order_date').fdatepicker();
 });
