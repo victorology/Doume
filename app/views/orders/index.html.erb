@@ -11,13 +11,13 @@
 			<fieldset>
 				<h2 class="form_title">시간</h2>
 				<h3 class="form_subtitle">원하시는 날짜를 선택해주세요</h3>
-				<input type="text" id="order_date" data-date-format="yyyy-mm-dd" name="date" />
+				<input type="text" id="order_at" data-date-format="yyyy-mm-dd" name="order_at" />
 				<h3 class="form_subtitle">원하시는 서비스를 선택해주세요</h3>
 				<div class="row">
 			    <div class="large-12 columns">
-			      <label for="service"><input name="service" type="radio" value="1" style="display:none;" CHECKED><span class="custom radio checked"></span><%= service_string(1) %></label>
-			      <label for="service"><input name="service" type="radio" value="2" style="display:none;"><span class="custom radio"></span><%= service_string(2) %></label>
-			      <label for="service"><input name="service" type="radio" value="3" style="display:none;"><span class="custom radio"></span><%= service_string(3) %></label>
+			      <label for="service_type"><input name="service_type" type="radio" value="1" style="display:none;" CHECKED><span class="custom radio checked"></span><%= service_string(1) %></label>
+			      <label for="service_type"><input name="service_type" type="radio" value="2" style="display:none;"><span class="custom radio"></span><%= service_string(2) %></label>
+			      <label for="service_type"><input name="service_type" type="radio" value="3" style="display:none;"><span class="custom radio"></span><%= service_string(3) %></label>
 			    </div>
 		    </div>
 				<input type="button" name="next" class="next action-button" value="다음" />
@@ -28,7 +28,7 @@
 						도우미 방문 날짜
 					</div>
 					<div class="large-6 columns value">
-						<div id="order_date"></div>
+						<div id="order_at"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -36,7 +36,7 @@
 						서비스 종류
 					</div>
 					<div class="large-6 columns value">
-						<div id="order_service"></div>
+						<div id="order_service_type"></div>
 					</div>
 				</div>
 				<hr />

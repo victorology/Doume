@@ -14,8 +14,8 @@ $(function() {
 		next_fs.show();
 		current_fs.hide();
 
-		var order_date = current_fs.find("#order_date").val();
-		next_fs.find("#order_date").html(order_date);
+		var order_at = current_fs.find("#order_at").val();
+		next_fs.find("#order_at").html(order_at);
 		var order_service = current_fs.find('input[name=service]:checked').parent().text();
 		next_fs.find("#order_service").html(order_service);
 	});
@@ -42,8 +42,8 @@ $(function() {
 	var now = new Date();
 	var today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
 	var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 0, 0);
-	$('#order_date').val(tomorrow.getFullYear()+"-"+(tomorrow.getMonth()+1)+"-"+tomorrow.getDate());
-	$('#order_date').fdatepicker({
+	$('#order_at').val(tomorrow.getFullYear()+"-"+(tomorrow.getMonth()+1)+"-"+tomorrow.getDate());
+	$('#order_at').fdatepicker({
         onRender: function (date) {
             return date.valueOf() < today.valueOf() ? 'disabled' : '';
         }
