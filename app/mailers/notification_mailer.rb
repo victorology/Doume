@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  add_template_helper(Helper)
+  add_template_helper(ApplicationHelper)
   default from: "notification@mydoume.com"
   default to: "nabugoon@gmail.com,v@victor.is"
   default subject: "We have a new order!"
