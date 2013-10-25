@@ -20,3 +20,4 @@ doc/
 .secret
 .ruby-version
 .sass-cache
+.env
