@@ -15,6 +15,15 @@ label {
 	font-size: 1.2em;
 }
 	
+.columns.title {
+	text-align: right;
+	color: #666;
+}
+
+.columns.value {
+	text-align: left;
+}
+
 #order_form {
 	margin: 50px auto;
 	text-align: center;
@@ -36,8 +45,6 @@ label {
 	border-radius: 3px;
 	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 	padding: 20px 30px;
-
-	box-sizing: border-box;
 	width: 80%;
 	margin: 0 10%;
 	position: absolute;
@@ -132,4 +139,15 @@ label {
 #progressbar li.active:before, #progressbar li.active:after {
 	background: #27ae60;
 	color: white;
+}
+
+#thankyou {
+	text-align: center;
+	width: 80%;
+	background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	padding: 20px 30px;
+	margin: 50px 10%;
 }

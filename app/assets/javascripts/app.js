@@ -36,8 +36,22 @@ $(function() {
 		return false;
 	});
 
-	fieldset_height = $("fieldset").outerHeight();
+	var fieldset_height = $("fieldset").outerHeight();
 	$(".space").height(fieldset_height);
 
-	$('#order_date').fdatepicker();
+	var now = new Date();
+	var today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
+	var tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0, 0, 0, 0);
+	$('#order_date').val(tomorrow.getFullYear()+"-"+(tomorrow.getMonth()+1)+"-"+tomorrow.getDate());
+	$('#order_date').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < today.valueOf() ? 'disabled' : '';
+        }
+    });
+
+    $('#order_form').on('invalid', function () {
+		var invalid = $(this).find('[data-invalid]');
+		var invalid_fs = $(invalid[0]).parent().parent();
+		invalid_fs.show();
+	});
 });
