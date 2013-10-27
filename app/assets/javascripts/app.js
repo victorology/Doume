@@ -68,6 +68,12 @@ $(function() {
     $('#order_form').on('invalid', function () {
 		var invalid = $(this).find('[data-invalid]');
 		var invalid_fs = $(invalid[0]).parent().parent();
+
+		var order_at = $("#order_at").val();
+		var service_type = $('input[name=service_type]:checked').parent().text();
+		$(".description h2").html('');
+		$(".description h3").html(order_at + ", " + service_type + "을 선택하셨습니다.");
+
 		$('fieldset').hide();
 		invalid_fs.show();
 	});
