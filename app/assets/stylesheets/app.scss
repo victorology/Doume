@@ -2,7 +2,7 @@
 
 html {
 	height: 100%;
-	background: asset-url(/assets/hero.large.jpg);
+	background: asset-url('/assets/hero.large.jpg');
 }
 
 body {
@@ -65,7 +65,7 @@ ul {
 
 .spinner {
 	height: 66px;
-	background: asset-url(/assets/ajax-loader.gif) no-repeat center;
+	background: asset-url('/assets/ajax-loader.gif') no-repeat center;
 }
 
 .result_greeting {
