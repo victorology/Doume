@@ -18,6 +18,7 @@ gem 'compass-rails', '~> 2.0.alpha.0'
 gem 'zurb-foundation', '~> 4.3.2'
 gem 'mandrill-api'
 gem 'newrelic_rpm'
+gem 'unicorn'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

@@ -10,5 +10,7 @@ class OrdersController < ApplicationController
 		if order.save
 			NotificationMailer.order_notification(order).deliver
 		end
+
+		render :partial => 'create'
 	end
 end
