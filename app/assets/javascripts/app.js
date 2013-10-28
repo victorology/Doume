@@ -61,7 +61,7 @@ $(function() {
 	$('#order_at').val(tomorrow.getFullYear()+"-"+(tomorrow.getMonth()+1)+"-"+tomorrow.getDate());
 	$('#order_at').fdatepicker({
         onRender: function (date) {
-            return date.valueOf() < today.valueOf() ? 'disabled' : '';
+            return date.valueOf() < tomorrow.valueOf() ? 'disabled' : '';
         }
     });
 
