@@ -1,58 +1,69 @@
 <% title "마이도우미 신청" %>
-<div class="row">
-	<div class="large-12 columns">
-		<ul id="progressbar">
-			<li class="active"></li>
-			<li></li>
-			<li></li>
-		</ul>
-		<div class="description">
-			<h2 class="desc_title">쉽고 간편하게 도우미를 찾아보세요.</h2>
-			<h3 class="desc_subtitle">
-				<p>테스트를 거치고 검증된 도우미를 보내드립니다.</p>
-				<p>예약을 먼저하시고, 청소가 끝나면 비용을 지불하세요.</p>
-			</h3>
+<header class="large-12 columns">
+	<div class="row">
+		<div class="logo"></div>
+	</div>
+</header>
+<div class="contents">
+	<div class="row">
+		<div class="large-12 columns">
+			<ul id="progressbar">
+				<li class="active"></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<div class="description">
+				<h2 class="desc_title">쉽고 간편하게 도우미를 구하세요</h2>
+				<h3 class="desc_subtitle">
+					<p>테스트를 거치고 검증된 도우미를 보내드립니다.</p>
+					<p>예약을 먼저하시고, 청소가 끝나면 비용을 지불하세요.</p>
+				</h3>
+			</div>
+			<form id="order_form" class="custom" action="orders" method="POST" data-remote="true" data-update-target="finish" data-abide>
+				<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+				<fieldset>
+					<h3 class="form_subtitle">원하시는 날짜를 선택해주세요</h3>
+					<input type="text" id="order_at" data-date-format="yyyy-mm-dd" name="order_at" />
+					<hr />
+					<h3 class="form_subtitle">원하시는 서비스를 선택해주세요</h3>
+		      <label for="service_type"><input name="service_type" type="radio" value="1" style="display:none;" CHECKED><span class="custom radio checked"></span><%= service_string(1) %></label>
+		      <label for="service_type"><input name="service_type" type="radio" value="2" style="display:none;"><span class="custom radio"></span><%= service_string(2) %></label>
+		      <label for="service_type"><input name="service_type" type="radio" value="3" style="display:none;"><span class="custom radio"></span><%= service_string(3) %></label>
+		      <hr />
+					<input type="button" name="next" class="next action-button" value="다음" />
+				</fieldset>
+				<fieldset>
+					<div class="name-field">
+						<label>이름을 입력해주세요</label>
+						<input type="text" name="name" placeholder="홍길동" required />
+						<small class="error">이름은 필수항목입니다</small>
+					</div>
+					<hr />
+					<div class="address-field">
+						<label>전체주소를 입력해주세요</label>
+						<input type="text" name="address" placeholder="서울 강남구 역삼동 683-34 4층" required />
+						<small class="error">주소는 필수항목입니다</small>
+					</div>
+					<hr />
+					<div class="address-field">
+						<label>전화번호를 입력해주세요</label>
+						<input type="text" name="tel" placeholder="010-1234-5678" required />
+						<small class="error">전화번호는 필수항목입니다</small>
+					</div>
+					<hr />
+					<input type="button" name="previous" class="previous action-button" value="이전" />
+					<input type="submit" name="submit" class="submit action-button" value="신청하기" />
+				</fieldset>
+				<fieldset id="finish">
+					<div class="spinner"></div>
+				</fieldset>
+				<div class="space"></div>
+			</form>
 		</div>
-		<form id="order_form" class="custom" action="orders" method="POST" data-remote="true" data-update-target="finish" data-abide>
-			<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-			<fieldset>
-				<h3 class="form_subtitle">원하시는 날짜를 선택해주세요</h3>
-				<input type="text" id="order_at" data-date-format="yyyy-mm-dd" name="order_at" />
-				<hr />
-				<h3 class="form_subtitle">원하시는 서비스를 선택해주세요</h3>
-	      <label for="service_type"><input name="service_type" type="radio" value="1" style="display:none;" CHECKED><span class="custom radio checked"></span><%= service_string(1) %></label>
-	      <label for="service_type"><input name="service_type" type="radio" value="2" style="display:none;"><span class="custom radio"></span><%= service_string(2) %></label>
-	      <label for="service_type"><input name="service_type" type="radio" value="3" style="display:none;"><span class="custom radio"></span><%= service_string(3) %></label>
-<!-- 	      <div class="row">
-	      	<div class="6-large columns">
- -->						<input type="button" name="next" class="next action-button" value="다음" />
-<!-- 					</div>
-				</div>
- -->			</fieldset>
-			<fieldset>
-				<div class="name-field">
-					<label>이름을 입력해주세요</label>
-					<input type="text" name="name" placeholder="홍길동" required />
-					<small class="error">이름은 필수항목입니다</small>
-				</div>
-				<div class="address-field">
-					<label>전체주소를 입력해주세요</label>
-					<input type="text" name="address" placeholder="서울 강남구 역삼동 683-34 4층" required />
-					<small class="error">주소는 필수항목입니다</small>
-				</div>
-				<div class="address-field">
-					<label>전화번호를 입력해주세요</label>
-					<input type="text" name="tel" placeholder="010-1234-5678" required />
-					<small class="error">전화번호는 필수항목입니다</small>
-				</div>
-				
-				<input type="button" name="previous" class="previous action-button" value="이전" />
-				<input type="submit" name="submit" class="submit action-button" value="신청하기" />
-			</fieldset>
-			<fieldset id="finish">
-				<div class="spinner"></div>
-			</fieldset>
-			<div class="space"></div>
-		</form>
 	</div>
 </div>
+<footer>
+	<div class="row">
+		(c) 2013 mydoume. 서울시 강남구 역삼동 683-34 새롬빌딩 4~6층
+	</div>
+</footer>

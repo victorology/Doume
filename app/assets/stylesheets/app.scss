@@ -23,7 +23,47 @@ span.custom.radio {
 ul {
 	margin: 50px 0 20px 0;
 }
-	
+
+header {
+	background-color: white;
+}
+
+footer {
+	padding: 10px;
+	text-align: center;
+	background-color: white;
+}
+
+@media only screen {
+	.contents .columns {
+		max-width: 500px;
+	}
+}	
+
+.logo {
+	height: 55px;
+	margin-top: 5px;
+	background-image: url('/assets/logo.png');
+	background-repeat: no-repeat;
+}
+@media (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+	.logo {
+		background-image: url('/assets/logo.2x.png');
+	}
+}
+@media (min-width: 768px) {
+	.logo {
+		margin-top: 5px;
+		height: 75px;
+		background-image: url('/assets/logo.large.png');
+	}
+}
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.75), (min-resolution: 168dpi) {
+	.logo {
+		background-image: url('/assets/logo.large.2x.png');
+	}
+}
+
 .columns.title {
 	text-align: right;
 	color: #484848;
@@ -93,13 +133,13 @@ ul {
 	position: relative;
 }
 
-@media only screen {
-	body {
+/*@media only screen {
+	#order_form {
 		max-width: 650px;
 		margin: 0 auto;
 	}
 }
-
+*/
 #order_form fieldset {
 	background: rgba(255, 255, 255, 0.8);
 	margin: 0;
