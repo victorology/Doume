@@ -3,6 +3,9 @@ $(function() {
 	var left, opacity, scale;
 	var animating;
 
+	var fieldset_height = $("fieldset").outerHeight();
+	$(".space").height(fieldset_height);
+
 	$(".submit").click(function() {
 		// if (animating) return false;
 		// animating = true;
@@ -33,6 +36,9 @@ $(function() {
 		var service_type = current_fs.find('input[name=service_type]:checked').parent().text();
 		$(".description h2").html('');
 		$(".description h3").html(order_at + ", " + service_type + "을 선택하셨습니다.");
+
+		var fieldset_height = next_fs.outerHeight();
+		$(".space").height(fieldset_height);
 	});
 
 	$(".previous").click(function() {
@@ -49,11 +55,10 @@ $(function() {
 
 		previous_fs.show();
 		current_fs.hide();
+
+		var fieldset_height = previous_fs.outerHeight();
+		$(".space").height(fieldset_height);
 	});
-
-
-	var fieldset_height = $("fieldset").outerHeight();
-	$(".space").height(fieldset_height);
 
 	var now = new Date();
 	var today = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0);
@@ -76,12 +81,17 @@ $(function() {
 
 		$('fieldset').hide();
 		invalid_fs.show();
+
+		var fieldset_height = invalid_fs.outerHeight();
+		$(".space").height(fieldset_height);
 	});
 
 	$('form[data-update-target]').on('ajax:success', function(evt, data) {
         var target = $(this).data('update-target');
         $('#' + target).html(data);
-    });
+        $('.description h2').html('주문을 처리 중 에러가 발생했습니다');
+		$(".description h3").html("");
+	});
 
     $('form[data-update-target]').on('ajax:error', function(xhr, status, error) {
         var target = $(this).data('update-target');

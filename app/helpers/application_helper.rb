@@ -6,11 +6,11 @@ module ApplicationHelper
 	def service_string(service_num)
 		case service_num
 		when 1
-			"종일 (9시~5시). 7만원"
+			"종일 (9시~5시). 7만5천원"
 		when 2
-			"오전 (9시~1시). 4만원"
+			"오전 (9시~1시). 4만5천원"
 		when 3
-			"오후 (2시~6시). 4만원"
+			"오후 (2시~6시). 4만5천원"
 		else
 			"준비중 입니다"
 		end
