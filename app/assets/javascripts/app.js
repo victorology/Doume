@@ -42,7 +42,7 @@ $(function() {
 		$(".description h3").html(order_at + ", " + service_type + "을 선택하셨습니다.");
 		setSpaceHeightFromElement(next_fs);
 
-		ga('send', 'event', 'orders', 'select_service_type', 'service_type');
+		ga('send', 'event', 'orders', 'select_service_type', service_type);
 		ga('send', 'event', 'orders', 'next', 'progress');
 	});
 
