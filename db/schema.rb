@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131029184854) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "orders", force: true do |t|
     t.date     "order_at"
     t.integer  "service_type"
