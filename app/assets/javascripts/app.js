@@ -44,7 +44,7 @@ $(function() {
 
 		ga('send', 'event', 'orders', 'select_service_type', service_type);
 		ga('send', 'event', 'orders', 'next', 'progress');
-		mixpanel.track('Next', {"Service Type": service_type});
+		mixpanel.track('Next Step', {"Service Type": service_type});
 	});
 
 	$(".previous").click(function() {
