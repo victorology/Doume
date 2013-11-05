@@ -44,6 +44,7 @@ $(function() {
 
 		ga('send', 'event', 'orders', 'select_service_type', service_type);
 		ga('send', 'event', 'orders', 'next', 'progress');
+		mixpanel.track('Next', {"Service Type": service_type});
 	});
 
 	$(".previous").click(function() {
@@ -63,6 +64,7 @@ $(function() {
 
 		setSpaceHeightFromElement(previous_fs);
 		ga('send', 'event', 'orders', 'previous', 'progress');
+		mixpanel.track('Previous');
 	});
 
 	var now = new Date();
@@ -89,6 +91,7 @@ $(function() {
 
 		setSpaceHeightFromElement(invalid_fs);
 		ga('send', 'event', 'orders', 'invalid', 'submit');
+		mixpanel.track('Invalid Order');
 	});
 
 	$('form[data-update-target]').on('ajax:success', function(evt, data) {
@@ -99,6 +102,7 @@ $(function() {
 
 		setSpaceHeightFromElement($('fieldset')[2]);
 		ga('send', 'event', 'orders', 'success', 'submit');
+		mixpanel.track('Place Order');
 	});
 
     $('form[data-update-target]').on('ajax:error', function(xhr, status, error) {
